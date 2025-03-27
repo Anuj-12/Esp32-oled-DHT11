@@ -32,11 +32,13 @@ void setup(){
 }
 
 void loop(){
+
+  useDHT();
+}
+
+void useDHT(){
   float temp = dht.readTemperature();
   float humid = dht.readHumidity();
-  Serial.print("Humidity : "); Serial.print(humid, 1); Serial.println(" %");
-  Serial.print("Temperature : "); Serial.print(temp, 1); Serial.println(" C");
-
   display.clearDisplay();
   display.setTextColor(WHITE);
   display.setTextSize(2);
